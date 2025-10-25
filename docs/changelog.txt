@@ -18,4 +18,8 @@ Gombi {
     - template view-ok adminba teszthez
     Működés: session alapú hozzáféréskezelés, a bejelentkezést magával hordozza, admin oldalak belépve
     megtekinthetőek, kilépve 404-re dob azokon az oldalakon. 
+- User backend:
+    - logika ugyanaz, session alapú login, csak itt remember tokent is használunk,
+    illetve nem 404-re dobunk ha !auth van, hanem /loginra, segítve a belépést.
+    /register alap is létrejött.
 }
