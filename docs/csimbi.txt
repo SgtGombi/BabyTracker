@@ -11,9 +11,19 @@ Amire szükséged lesz:
 5. CMD: copy .env.example .env --> majd az .env fájlba vedd ki a DB rész mögül a #-t, és DB_DATABASE=babytracker
 6. CMD: composer install
 7. CMD: php artisan key:generate
-8. CMD: php artisan migrate
-9. CMD: php artisan db:seed
-10.CMD: php artisan storage:link
-11.CMD: Futtatás: php artisan serve, majd localhost:8000, vagy ami portra kienged.
+8. CMD: php artisan migrate: létrehozza a db táblákat
+9. CMD: php artisan db:seed: feltölti adattal x táblát ha van seed hozzá
+10.CMD: php artisan storage:link: erre keress rá, ez bonyolultabb kicsit,de most még publicba simán tehetsz landing pages icont képet.
+11.CMD: Futtatás: php artisan serve, majd localhost:8000, vagy ami portra kienged. Ha meguntad CTRL C, és leáll.
 
+Kódolás előtt:
+- git checkout -b <branchod neve, nekem gombi>: létrehozol egy saját brancht.
+- git branch: láthatod a branchokat, csillaggal melyiken állsz.
+- Mehet a kód, arra figyelj hogy mindig a saját branchodon legyél
+- Push: git push origin <branchneve> -->ez a tuti
 
+- Ha már ezen túlvagy, mindig kódolás után pusholj,
+minden kódolás előtt fetchelj hogy a legfrissebbet lehúzd, majd jöhet a kódolás.
+
+DB: migráció/seed futtatása után láthatod a localhost/phpmyadmin-on
+Táblák ami nem lara alap: user,admins,children
