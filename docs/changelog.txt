@@ -1,0 +1,8 @@
+Gombocz István Ferenc (ZCYPKZ) = Gombi
+Csimbók Zsolt (?) = ?
+
+2025.10.25:
+- laravel projekt inicializálása
+- DB V1 majd DB V1.1: migrációk létrehozása
+- Modelek a táblákhoz, 1:N és stb. kapcsolatok felépítése
+- app.php: időzóna átállítása, env.example átírása

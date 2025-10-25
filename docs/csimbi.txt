@@ -9,6 +9,7 @@ Amire szükséged lesz:
 3. Böngésző: localhost/phpmyadmin linken hozz létre egy "babytracker" nevű db-t, utf8mb4_unicode_ci !!!
 4. CMD: lépj a xampp/htdocs mappába, és ide git clone <git>, fontos hogy ide. Aztán CD projekt mappa és többi lépés.
 5. CMD: copy .env.example .env --> majd az .env fájlba vedd ki a DB rész mögül a #-t, és DB_DATABASE=babytracker
+        // 5! lépésbe csak a cmd kell már, az env.example-t beállítottam előre.
 6. CMD: composer install
 7. CMD: php artisan key:generate
 8. CMD: php artisan migrate: létrehozza a db táblákat

@@ -17,6 +17,7 @@ class CreateMealsTable extends Migration
             $table->string('meal_name');
             $table->decimal('meal_quantity', 8, 2)->nullable();
             $table->string('meal_unit')->nullable();
+            $table->text('note')->nullable();
             $table->timestamps();
         });
     }
