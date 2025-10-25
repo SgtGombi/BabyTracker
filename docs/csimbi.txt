@@ -1,0 +1,19 @@
+Nem akartam regényt ide, szóval leírást nem sokat adok, hívj vagy írj és szívesen segítek, vagy chatgpt.
+
+Amire szükséged lesz:
+- XAMPP 8.2.12. https://www.apachefriends.org/hu/index.html
+- Composer (mint a Maven, csomagkezelo): https://getcomposer.org/download/
+
+1. Telepítsd a xamppot, php -v paranccsal nézd meg utána hogy jó-e. Ez php-t és mysql-t is tartalmaz.
+2. Indítsd el a xampp/xampp-controlt, apache+mysql-re start.
+3. Böngésző: localhost/phpmyadmin linken hozz létre egy "babytracker" nevű db-t, utf8mb4_unicode_ci !!!
+4. CMD: lépj a xampp/htdocs mappába, és ide git clone <git>, fontos hogy ide. Aztán CD projekt mappa és többi lépés.
+5. CMD: copy .env.example .env --> majd az .env fájlba vedd ki a DB rész mögül a #-t, és DB_DATABASE=babytracker
+6. CMD: composer install
+7. CMD: php artisan key:generate
+8. CMD: php artisan migrate
+9. CMD: php artisan db:seed
+10.CMD: php artisan storage:link
+11.CMD: Futtatás: php artisan serve, majd localhost:8000, vagy ami portra kienged.
+
+
