@@ -4,47 +4,64 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
-use App\Models\Admin;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\ValidationException;
 
 class LoginController extends Controller
 {
-    // visszaadja a login htmlt
-	public function showLoginForm()
-	{
-		return view('admin.login');
-	}
-    
-    // login ellenorzes
-	public function login(Request $request)
-	{
-        // request osztály jó cucc, validálja itt az adatokat input alapján
-		$data = $request->validate([
-			'email' => 'required|email',
-			'password' => 'required|string',
-		]);
-        // lekéri az admin adatot email alapján
-		$admin = Admin::where('email', $data['email'])->first();
+    /**
+     * Megjeleníti a login formot
+     */
+    public function showLoginForm()
+    {
+        // Ha már be van jelentkezve, átirányítjuk a dashboardra
+        if (Auth::guard('admin')->check()) {
+            return redirect()->route('admin.dashboard');
+        }
 
-        // hash-elt jelszót ellenőriz
-		if (! $admin || ! Hash::check($data['password'], $admin->password)) {
-			return back()->withErrors(['email' => 'Helytelen felhasználónév vagy jelszó.'])->withInput();
-		}
-        // kezeljünk active/inactive fiókokat is, ez csak plusz.
-		if (! (int) $admin->active) {
-			return back()->withErrors(['email' => 'A fiók nincs aktiválva.'])->withInput();
-		}
+        return view('admin.login');
+    }
 
-		session()->put('admin_id', $admin->id);
+    /**
+     * Bejelentkezési kísérlet kezelése
+     */
+    public function login(Request $request)
+    {
+        $credentials = $request->validate([
+            'email' => 'required|email',
+            'password' => 'required',
+        ]);
 
-		return redirect()->intended('/admin');
-	}
+        // Ellenőrizzük, hogy létezik-e az admin és aktív-e
+        $admin = \App\Models\Admin::where('email', $credentials['email'])->first();
+        
+        if ($admin && $admin->active == 0) {
+            throw ValidationException::withMessages([
+                'email' => 'Ez az admin fiók inaktív.',
+            ]);
+        }
 
-    // logout gombhoz ezt kell meghívni
-	public function logout(Request $request)
-	{
-		$request->session()->forget('admin_id');
-		return redirect('/admin/login');
-	}
+        if (Auth::guard('admin')->attempt($credentials)) {
+            $request->session()->regenerate();
+            
+            return redirect()->intended(route('admin.dashboard'));
+        }
+
+        throw ValidationException::withMessages([
+            'email' => 'A megadott adatok nem egyeznek.',
+        ]);
+    }
+
+    /**
+     * Kijelentkezés kezelése
+     */
+    public function logout(Request $request)
+    {
+        Auth::guard('admin')->logout();
+        
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        
+        return redirect()->route('admin.login')->with('status', 'Sikeresen kijelentkeztél!');
+    }
 }
-

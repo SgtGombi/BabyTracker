@@ -20,6 +20,7 @@ class CreateAdminsTable extends Migration
             $table->string('name');
             $table->tinyInteger('active')->default(1);
             $table->tinyInteger('level')->default(1);
+            $table->rememberToken();
             $table->timestamps();
         });
     }

@@ -21,6 +21,7 @@ class CreateUserTable extends Migration
             $table->string('phone')->nullable();
             $table->tinyInteger('active')->default(1);
             $table->text('note')->nullable();
+            $table->rememberToken();
             $table->timestamps();
         });
     }

@@ -1,3 +1,4 @@
+<!-- ez egy alapból generált fájl, törölheted majd nyugodtan -->
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
