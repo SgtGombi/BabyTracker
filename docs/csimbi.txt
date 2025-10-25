@@ -27,4 +27,17 @@ Kódolás előtt:
 minden kódolás előtt fetchelj hogy a legfrissebbet lehúzd, majd jöhet a kódolás.
 
 DB: migráció/seed futtatása után láthatod a localhost/phpmyadmin-on
-Táblák ami nem lara alap: user,admins,children
+
+FONTOS FELÉPÍTÉS AMIT NÉZZ ÁT:
+1. DB: database/migrations --> ezek hozzák létre a db-t "php artisan migrate" parancsra. Ez egy pontos leírás a db-ről.
+2. Model: APP/MODELS --> Ez kezeli a DB-controller kapcsolatot. Leírja a kapcsolatokat a táblák között, melyik oszlopokat tölthetjük fel weben keresztül.
+3. Controller: APP/HTTP/CONTROLLERS/ --> itt van ami a backend logika, user és admin két részre szedve.
+4. Views: RESOURCES/VIEWS/ --> itt vannak a "html"-ek amiket látunk, xy.blade.php formátumban. Láthatod a layout elrendezést. USER/ADMIN külön.
+5. Route: ROUTES/WEB.PHP --> itt láthatod az elérhető routeokat, melyik van auth alatt, melyik nincs.
+
+AMI MEGVAN: komplett admin auth, session, controller hozzá: Hogy tesztelhessem csináltam egy üres blade fájlt. Azoknak kell frontend.
+Ezeknek ad át a controller adatot, szóval itt még ismerkedésként blade-el frontenddel kezdhetsz. A routeban látható routeokhoz van view blade fájl is,
+ennyi segítség van. HA ezek megvannak, akár kipróbálhatsz új route-controller változtatást, pl. user dashboardhoz gyerek rögzítése, ez kis backend.
+Ha nem izgat, akkor megcsinálom én a backend rögzítés részét is, te meg a formokat a frontenden akkor.
+
+# GLHF!
