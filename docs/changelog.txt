@@ -1,0 +1,21 @@
+Gombocz István Ferenc (ZCYPKZ) = Gombi
+Csimbók Zsolt (?) = ?
+
+2025.10.25:
+Gombi {
+- laravel projekt inicializálása
+- DB V1 majd DB V1.1, majd DB V1.2.: migrációk létrehozása
+- Modelek a táblákhoz, 1:N és stb. kapcsolatok felépítése
+- app.php: időzóna átállítása, env.example átírása
+- admin/LoginController.php: Admin login rendezése, bejelentkezés auth, get/post route
+- web.php: admin routeok hozzáadva
+- views: mappaszerkezet kialakítva, view/admin és /user, layout mappák is bennük.
+- Admin backend:
+    - admin controllerek létrehozása
+    - AdminAuthenticate middleware létrehozása
+    - config/auth.php bővítése
+    - routes: web.php-ba /admin prefix, és middleware védelem alkalmazása
+    - template view-ok adminba teszthez
+    Működés: session alapú hozzáféréskezelés, a bejelentkezést magával hordozza, admin oldalak belépve
+    megtekinthetőek, kilépve 404-re dob azokon az oldalakon. 
+}

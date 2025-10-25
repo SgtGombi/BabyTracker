@@ -14,6 +14,7 @@ class CreateDiapersTable extends Migration
             $table->date('date');
             $table->time('time');
             $table->enum('diaper_type', ['pepee', 'popoo']);
+            $table->text('note')->nullable();
             $table->timestamps();
         });
     }
