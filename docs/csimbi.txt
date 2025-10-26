@@ -40,4 +40,6 @@ Ezeknek ad át a controller adatot, szóval itt még ismerkedésként blade-el f
 ennyi segítség van. HA ezek megvannak, akár kipróbálhatsz új route-controller változtatást, pl. user dashboardhoz gyerek rögzítése, ez kis backend.
 Ha nem izgat, akkor megcsinálom én a backend rögzítés részét is, te meg a formokat a frontenden akkor.
 
+# feladat1.txt oda irkálj dolgokat a feladatleírás szerint
+
 # GLHF!

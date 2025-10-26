@@ -23,3 +23,9 @@ Gombi {
     illetve nem 404-re dobunk ha !auth van, hanem /loginra, segítve a belépést.
     /register alap is létrejött.
 }
+2025.10.26:
+Gombi {
+- docs frissítése, feladat1.txt hozzáadása és elvégzése
+- új db tábla: sleeps, + model: Sleep.
+- Controllerkezelés: a user/admin dashboard view megkapja a db adatokat mostmár.
+}
