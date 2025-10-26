@@ -8,13 +8,12 @@ use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
 {
-    /**
-     * Megjeleníti a user dashboardot
-     */
     public function index()
     {
         $user = Auth::guard('web')->user();
         
-        return view('user.dashboard', compact('user'));
+        $children = $user->children()->with(['meals','medications','diapers','sleeps'])->get();
+
+        return view('user.dashboard', compact('user', 'children'));
     }
 }
