@@ -12,7 +12,8 @@
 @if($user->phone)
     <p>Telefon: {{ $user->phone }}</p>
 @endif
-
+    
+@endforeach
 <form method="POST" action="{{ route('user.logout') }}">
     @csrf
     <button type="submit">Kijelentkezés</button>

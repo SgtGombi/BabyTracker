@@ -1,0 +1,28 @@
+Gombocz István Ferenc (ZCYPKZ ID=1):
+    Funkcionális követelmény: (ID,Title)
+    - (1,adattárolás) Én mint szülő, szeretném hogy a gyermekem minden lényeges információját tárolhassam, hogy bármikor visszanézhessem és tanulságot vonhassak le belőle.
+    - (1,felhasználóbarát felület) Én mint felhasználó, szeretném hogy az adatokat gyorsan rögzíthessem, jól átlátható legyen az oldal, és minden könnyen elérhető legyen, mert idő hiányában néha gyorsan akarok rögzíteni adatokat.
+    Nem funkcionális:
+    - (1, biztonság): Login felület user/adminnak is, db-be nem simán jelszót, hanem hash-t (bcrypt) tároljunk. A belépés során sessiont kezeljünk, kilépéskor dobjuk el. User kapjon remember token-t is.
+    - (1, megbízhatóság): Az adatok ne vesszenek el, ezért mentünk backup adatbázist is, a user csak a saját adatait láthatja viszont, amelyet backend végez.
+
+Csimbók Zsolt (ID=2):
+    Funkcionális követelmény: (ID,Title)
+    -(2,)
+    -(2,)
+    Nem funkcionális:
+    -(2,)
+    -(2,)
+
+Terminológia és fogalomtár:
+Gombocz István Ferenc:
+- Laravel: PHP keretrendszer a backend fejlesztéséhez.
+- MVC: Model-View-Controller:
+    - Model: adatok kezeléséért felel, táblázat leképzése.
+    - View: a tényleges html nézet, a megjelenítésért felel.
+    - Controller: a kettő kapcsolója, amely adatot adhat, vagy kaphat a view-tól, db mentést végezhet, stb.
+- Migration: Migrációs fájl, laravel sajátja. DB-t nem külön mysql-ben, hanem laravelen belül hozunk létre, más résztvevő migrációval rögtön kész adatbázist kaphat így.
+
+Csimbók Zsolt:
+- Blade: Laravel template motorja a nézetekhez. pl: dashboard.blade.php
+- Routes: Megadott link (pl /fooldal) melyik controlleren át melyik metódushoz irányítjuk, és az milyen nézetet (view-t) ad vissza.
