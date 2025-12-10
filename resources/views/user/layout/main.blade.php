@@ -6,12 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>BabyTracker</title>
+    @vite('resources/css/app.css')
 </head>
-<body>
-    @include('admin.layout.sidebar')
-    <main>
-        @yield('content')
-    </main>
-    @include('admin.layout.footer')
+
+<body class="min-h-screen flex">
+{{-- Sidebar on the left --}}
+@include('admin.layout.sidebar')
+
+{{-- Main content area grows to fill the screen --}}
+<main class="flex-1">
+    @yield('content')
+</main>
+
+@include('admin.layout.footer')
 </body>
 </html>
