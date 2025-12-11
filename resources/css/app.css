@@ -4,8 +4,26 @@
 @source '../../storage/framework/views/*.php';
 @source '../**/*.blade.php';
 @source '../**/*.js';
-
+@plugin "daisyui";
 @theme {
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+:root {
+    /* Primary palette */
+    --color-baby-blue: #A8D8FF;
+    --color-baby-lavender: #C7B9FF;
+    --color-baby-pink: #F8C8DC;
+
+    /* Accent palette */
+    --color-peach: #FFE3C8;
+    --color-mint: #CFF8E2;
+    --color-butter: #FFF5A2;
+
+    /* Neutrals */
+    --color-bg: #FAFBFC;
+    --color-surface: #F1F5F9;
+    --color-border: #E2E8F0;
+    --color-text: #1E293B;
 }

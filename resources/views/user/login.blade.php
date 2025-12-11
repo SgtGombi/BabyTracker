@@ -1,36 +1,64 @@
 @extends('user.layout.main')
 
 @section('content')
-<h2>Bejelentkezés</h2>
+    <div class="min-h-screen flex items-center justify-center p-4">
+        <div class="card w-full max-w-md bg-base-200 shadow-xl">
+            <div class="card-body">
+                <h2 class="card-title text-center mb-4">Bejelentkezés</h2>
 
-@if(session('status'))
-    <p>{{ session('status') }}</p>
-@endif
+                @if(session('status'))
+                    <div class="alert alert-info mb-4">
+                        {{ session('status') }}
+                    </div>
+                @endif
 
-<form method="POST" action="{{ route('user.login.submit') }}">
-    @csrf
-    
-    <label for="email">Email</label>
-    <input id="email" name="email" type="email" value="{{ old('email') }}" required autofocus>
-    @error('email')
-        <span>{{ $message }}</span>
-    @enderror
+                <form method="POST" action="{{ route('user.login.submit') }}" class="space-y-4">
+                    @csrf
 
-    <label for="password">Jelszó</label>
-    <input id="password" name="password" type="password" required>
-    @error('password')
-        <span>{{ $message }}</span>
-    @enderror
+                    {{-- Email --}}
+                    <div class="form-control">
+                        <label for="email" class="label">
+                            <span class="label-text">Email</span>
+                        </label>
+                        <input id="email" name="email" type="email"
+                               value="{{ old('email') }}"
+                               class="input input-bordered w-full"
+                               required autofocus>
+                        @error('email')
+                        <p class="text-error text-sm mt-1">{{ $message }}</p>
+                        @enderror
+                    </div>
 
-    <label>
-        <input type="checkbox" name="remember"> Emlékezz rám
-    </label>
+                    {{-- Password --}}
+                    <div class="form-control">
+                        <label for="password" class="label">
+                            <span class="label-text">Jelszó</span>
+                        </label>
+                        <input id="password" name="password" type="password"
+                               class="input input-bordered w-full"
+                               required>
+                        @error('password')
+                        <p class="text-error text-sm mt-1">{{ $message }}</p>
+                        @enderror
+                    </div>
 
-    <button type="submit">Bejelentkezés</button>
-</form>
+                    {{-- Remember --}}
+                    <label class="label cursor-pointer justify-start gap-2">
+                        <input type="checkbox" name="remember" class="checkbox checkbox-primary">
+                        <span class="label-text">Emlékezz rám</span>
+                    </label>
 
-<p>
-    Nincs még fiókod? 
-    <a href="{{ route('user.register') }}">Regisztrálj itt!</a>
-</p>
+                    {{-- Submit --}}
+                    <button type="submit" class="btn btn-primary w-full">
+                        Bejelentkezés
+                    </button>
+                </form>
+
+                <p class="text-center mt-4">
+                    Nincs még fiókod?
+                    <a href="{{ route('user.register') }}" class="link link-primary">Regisztrálj itt!</a>
+                </p>
+            </div>
+        </div>
+    </div>
 @endsection
