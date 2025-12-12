@@ -17,6 +17,7 @@ class Diaper extends Model
         'date',
         'time',
         'diaper_type',
+        'note',
     ];
 
     public function child()
