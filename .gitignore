@@ -22,3 +22,7 @@
 Homestead.json
 Homestead.yaml
 Thumbs.db
+/docs/er_diagram.dot
+/docs/er_diagram.svg
+/docs/changelog.txt
+/docs/model_class_diagram.dot

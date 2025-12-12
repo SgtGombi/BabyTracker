@@ -11,13 +11,13 @@
 
 <body class="min-h-screen flex">
 {{-- Sidebar on the left --}}
-@include('admin.layout.sidebar')
+@include('user.layout.sidebar')
 
 {{-- Main content area grows to fill the screen --}}
 <main class="flex-1">
     @yield('content')
 </main>
 
-@include('admin.layout.footer')
+@include('user.layout.footer')
 </body>
 </html>

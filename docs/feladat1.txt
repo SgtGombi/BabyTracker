@@ -22,6 +22,7 @@ Gombocz István Ferenc:
     - View: a tényleges html nézet, a megjelenítésért felel.
     - Controller: a kettő kapcsolója, amely adatot adhat, vagy kaphat a view-tól, db mentést végezhet, stb.
 - Migration: Migrációs fájl, laravel sajátja. DB-t nem külön mysql-ben, hanem laravelen belül hozunk létre, más résztvevő migrációval rögtön kész adatbázist kaphat így.
+- ENV: Environment fájl, általában titkosított adatok kerülnek ide, innen emeljük be a programba a szükséges login adatokat. Gitre nem mehet fel.
 
 Csimbók Zsolt:
 - Blade: Laravel template motorja a nézetekhez. pl: dashboard.blade.php
