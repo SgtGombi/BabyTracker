@@ -20,6 +20,7 @@ class Meal extends Model
         'meal_name',
         'meal_quantity',
         'meal_unit',
+        'note',
     ];
 
     public function child()

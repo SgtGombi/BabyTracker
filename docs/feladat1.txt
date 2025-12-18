@@ -8,11 +8,11 @@ Gombocz István Ferenc (ZCYPKZ ID=1):
 
 Csimbók Zsolt (ID=2):
     Funkcionális követelmény: (ID,Title)
-    -(2,)
-    -(2,)
+    -(2,Reszponzív design) Felhasználóként változó környezetben, változó készülékekkel is szeretném hogy elérhető legyen a felület. Így fontos a mobil/desktop variáns.
+    -(2,Több, gyorsan elérhető gyermek) Több szülő felhasználó számára elvárás, hogy egyszerre több gyermek követhető legyen, azok között gyors és egyértelmű legyen a váltás.
     Nem funkcionális:
-    -(2,)
-    -(2,)
+    -(2,Reszponzív mag) Blade + Tailwind + DaisyUI kombinációval a felhasználói felület minden eszközön jól használható legyen. Könnyen elkülönülő, újrahasználható komponensekből dolgozzunk.
+    -(2,Skálázható adatmegjelenítés) A frontend design reálisan fel legyen készítve több gyermekhez tartozó adatmező gyors megjelenítésére. A felhasználó számára legyenek visszatérő UI jegyek amik jelzik épp melyik gyermek aktivitásának megtekintését végzi.
 
 Terminológia és fogalomtár:
 Gombocz István Ferenc:
@@ -22,6 +22,7 @@ Gombocz István Ferenc:
     - View: a tényleges html nézet, a megjelenítésért felel.
     - Controller: a kettő kapcsolója, amely adatot adhat, vagy kaphat a view-tól, db mentést végezhet, stb.
 - Migration: Migrációs fájl, laravel sajátja. DB-t nem külön mysql-ben, hanem laravelen belül hozunk létre, más résztvevő migrációval rögtön kész adatbázist kaphat így.
+- ENV: Environment fájl, általában titkosított adatok kerülnek ide, innen emeljük be a programba a szükséges login adatokat. Gitre nem mehet fel.
 
 Csimbók Zsolt:
 - Blade: Laravel template motorja a nézetekhez. pl: dashboard.blade.php

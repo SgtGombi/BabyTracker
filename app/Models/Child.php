@@ -8,6 +8,7 @@ use App\Models\User;
 use App\Models\Meal;
 use App\Models\Diaper;
 use App\Models\Medication;
+use App\Models\Sleep;
 
 class Child extends Model
 {
@@ -19,10 +20,12 @@ class Child extends Model
         'user_id',
         'first_name',
         'last_name',
+        'nickname',
         'age_months',
         'gender',
         'height',
         'weight',
+        'note',
     ];
 
     public function user()
@@ -43,5 +46,10 @@ class Child extends Model
     public function medications()
     {
         return $this->hasMany(Medication::class, 'children_id');
+    }
+
+    public function sleeps()
+    {
+        return $this->hasMany(Sleep::class, 'children_id');
     }
 }
