@@ -1,0 +1,55 @@
+FORRÁSOK ÉS AI HASZNÁLAT
+=====================
+
+Babytracker Rendszerfejlesztés projekt
+
+--------------------------------------------------
+Online referenciák
+--------------------------------------------------
+
+1. Unified Modeling Language (UML)
+   Forrás: GeeksforGeeks
+   URL: https://www.geeksforgeeks.org/system-design/unified-modeling-language-uml-activity-diagrams/
+
+2. PHP Laravel framework dokumentáció
+   https://laravel.com/docs/12.x/installation
+
+--------------------------------------------------
+AI Segítség
+--------------------------------------------------
+
+A következő promptok a dizájn, kódolás, és hibaellenőrzés folyamatában voltak a projekthez használva:
+
+AI Model:
+- Claude Sonnet 4.5
+
+A következő promptok a dizájn, kódolás, és hibaellenőrzés folyamatában voltak a projekthez használva:
+
+1. Laravel Artisan Commands
+   Prompt:
+   "Give a rundown and an explanation of the most commonly used Laravel PHP artisan commands, and their uses."
+
+2. UML Diagram Planning
+   Prompt:
+   "Based on the project https://github.com/SgtGombi/BabyTracker, what parts of the project would make for reasonable displays when considering adding them to an activity, sequence, and use-case UML diagrams? I am looking to create them manually in draw.io."
+
+3. Laravel Database Migrations
+   Prompt:
+   "What are the default fields in a Laravel project that it adds to its database migration upon creation?"
+
+4. UI Components for CRUD Applications
+   Prompt:
+   "Recommend a list of UI components that integrate easily into a Laravel-based CRUD project."
+
+5. Color Palette Design
+   Prompt:
+   "Give options for a basic 'baby tracker compatible' color palette, including primary, accent, and neutral colors. Give basic CSS code to reference these colors using variables."
+
+6. Database Connection Debugging
+   Prompt:
+   "How do I know if this command is trying to connect to the correct database?"
+
+   Context:
+   Laravel `php artisan db:seed` command resulting in a MySQL error:
+   - SQLSTATE[42S22]: Column not found: 1054 Unknown column 'name' in 'field list'
+
