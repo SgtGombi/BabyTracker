@@ -1,4 +1,9 @@
-# BabyTracker
+<h1 align="center">BabyTracker</h1>
+
+
+<p align="center">
+  <img src="docs/UI/babytracker_mockup.png" alt="App screenshot" width="700">
+</p>
 
 Rövid leírás
 ----------------
